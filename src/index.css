@@ -1,3 +1,67 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+
+
+
+
+
+.btn1{
+    background: linear-gradient(to bottom, #cc6600 0%, #ffff66 100%);
+  }
+
+
+.btnu{
+    background: linear-gradient(to bottom, #59e409 0%, #ffff66 100%);
+  }
+
+
+.btnd{
+    background: linear-gradient(to bottom, #e00808 0%, #c27878 100%);
+  }
+
+.btnf{
+    background: linear-gradient(to bottom, #e40989 0%, #cf9fd1 100%);
+  }
+
+
+
+
+
+
+
+
+
+  .slideshow {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .slideshowSlider {
+    display: flex;
+  }
+  
+  .slide {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .slideshowDots {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .slideshowDot {
+    cursor: pointer;
+    margin: 0 5px;
+  }
+  
+  .slideshowDot.active {
+    background-color: #000;
+  }
+  
