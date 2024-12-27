@@ -58,7 +58,7 @@ const Login = () => {
   return (
     <div
       style={{
-        backgroundImage: `url(${login})`,
+        // backgroundImage: `url(${login})`,
       }}
       className="hero bg-base-200 min-h-screen"
     >
