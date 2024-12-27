@@ -1,25 +1,17 @@
-import bannermp from '../../public/banner.mp4'
-import bg1 from '../assets/bg1.jpg'
-import bg2 from '../assets/bg2.jpg'
-import '../App.css'
-const Banner=()=>{
-    return(
-        <div className='grid grid-cols-3 grid-rows-2'>
-<video
-    onMouseOver={(e) => e.currentTarget.play()}
-    onMouseLeave={(e) => e.currentTarget.pause()}
-    loop
-    muted
-    preload="metadata"
-    id="video"
->
-    <source src={bannermp} type="video/mp4" />
-</video>
+import banner from '../assets/bannerbg.jpg';
 
-<img src={bg1} alt="" />
-<img src={bg2} alt="" />
-
+const Banner = () => {
+    return (
+        <div
+            style={{
+                backgroundImage: `url(${banner})`,
+                backgroundSize: "cover", // Optional: Ensures the image covers the div
+                backgroundPosition: "center", // Optional: Centers the image
+                height: "80vh", // Optional: Adjust height as needed
+            }}
+       className='mt-2' >
         </div>
-    )
-}
-export default Banner
+    );
+};
+
+export default Banner;

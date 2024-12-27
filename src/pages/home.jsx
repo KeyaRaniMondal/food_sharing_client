@@ -6,12 +6,12 @@ const Home=()=>{
     return(
         <div>
             <div className="">
-            <NavBar></NavBar>
+
             <div className="h-80 w-full">
             <Banner></Banner>
             </div>
             </div>
-            <Outlet></Outlet>
+
         </div>
     )
 }
