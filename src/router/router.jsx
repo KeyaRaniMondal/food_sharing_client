@@ -25,15 +25,15 @@ const router = createBrowserRouter([
         element: <AvailableFood />,
         loader: () => fetch("http://localhost:5000/food_collection").then((res) => res.json()),
       },
-{
-path:"/food/:id",
-element:(
-<PrivateRoute>
-    <FoodDetails></FoodDetails>
-</PrivateRoute>
-),
-loader:({params})=>fetch(`http://localhost:5000/food_collection/${params.id}`)
-} ,     
+      {
+        path: "/food/:id",
+        element: (
+          <PrivateRoute>
+            <FoodDetails></FoodDetails>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) => fetch(`http://localhost:5000/food_collection/${params.id}`)
+      },
       {
         path: "/addFood",
         element: <AddFood></AddFood>,

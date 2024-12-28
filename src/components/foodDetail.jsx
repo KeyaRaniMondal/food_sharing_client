@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/authProviders";
+import Swal from "sweetalert2";
 
 const FoodDetails = () => {
   const { user } = useContext(AuthContext);
@@ -34,10 +35,54 @@ const FoodDetails = () => {
     userEmail,
     userPhoto
   } = food;
- const name= userName|| user?.displayName || "Anonymous"
-  const email= userEmail|| user?.email || "No email"
-  const photo=userPhoto || user?.photoURL || "No photo"
+  const name = userName || user?.displayName || "Anonymous"
+  const email = userEmail || user?.email || "No email"
+  const photo = userPhoto || user?.photoURL || "No photo"
 
+  //For request delete
+  const handleDelete = () => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#3085d6",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/food_collection/${_id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount > 0) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Food deleted successfully!",
+                icon: "success",
+                timer: 2000,
+              });
+              navigate("/foodreq");
+            } else {
+              Swal.fire({
+                title: "Failed!",
+                text: "Failed to delete the food. Please try again.",
+                icon: "error",
+              });
+            }
+          })
+          .catch((error) => {
+            console.error("Error deleting movie:", error);
+            Swal.fire({
+              title: "Error!",
+              text: "An error occurred while deleting the food.",
+              icon: "error",
+            });
+          });
+      }
+    });
+  };
 
   return (
     <div className="food-details w-4/5 mx-auto my-10">
@@ -55,7 +100,6 @@ const FoodDetails = () => {
             Notes: <br /> {notes}
           </p>
           <div className="flex gap-4">
-            {/* Add more food details here */}
           </div>
         </div>
       </div>
@@ -64,21 +108,21 @@ const FoodDetails = () => {
         className="btn bg-[#d7da45] mt-5"
         onClick={() => document.getElementById("food-modal").showModal()}
       >
-       Request Details
+        Request Details
       </button>
 
       {/* Modal */}
-      <dialog id="food-modal" className="modal">
-        <div className="modal-box">
-        <img
-          src={FoodImg}
-          alt={food_name}
-          className="w-1/3 h-auto rounded-lg shadow-lg"
-        />
+      <dialog id="food-modal" className="modal modal-open mr-96">
+        <div className="modal-box relative">
+          <img
+            src={FoodImg}
+            alt={food_name}
+            className="w-1/3 h-auto rounded-lg shadow-lg"
+          />
           <h3 className="font-bold text-lg">{food_name} Details</h3>
-          <h3 className="font-bold text-lg">{_id} </h3>
+          <h3 className="font-bold text-lg">{_id}</h3>
           <h3 className="font-bold text-lg">{email}</h3>
-          <h3 className="font-bold text-lg">{name} </h3>
+          <h3 className="font-bold text-lg">{name}</h3>
           <p className="py-4">
             Quantity: {quantity}
             <br />
@@ -86,19 +130,21 @@ const FoodDetails = () => {
             <br />
             Time: {time}
             <br />
-            <h3 className="font-bold text-lg">{notes} </h3>
+            <h3 className="font-bold text-lg">{notes}</h3>
             Status: {status ? "Available" : "Not Available"}
           </p>
+
           <div className="modal-action">
             <button
               className="btn btn-secondary"
-              onClick={ handleDelete}
+              onClick={handleDelete}
             >
               Request
             </button>
           </div>
         </div>
       </dialog>
+
     </div>
   );
 };
