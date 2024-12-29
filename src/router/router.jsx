@@ -41,21 +41,21 @@ const router = createBrowserRouter([
       },
       {
         path: "/manageFood",
-        element:(
+        element: (
           <PrivateRoute>
-          <MyFood></MyFood>
+            <MyFood></MyFood>
           </PrivateRoute>
         )
-        
+
       },
       {
-        path: "/food/update/:id", 
-        element:(
-        <PrivateRoute>
- <UpdateFood></UpdateFood>
-      </PrivateRoute>),
-    loader: ({ params }) =>
-      fetch(`http://localhost:5000/food_collection/${params.id}`),
+        path: "/food/update/:id",
+        element: (
+          <PrivateRoute>
+            <UpdateFood></UpdateFood>
+          </PrivateRoute>),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/food_collection/${params.id}`),
       },
       {
         path: "/foodreq",
