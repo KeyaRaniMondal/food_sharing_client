@@ -118,7 +118,7 @@ const AddFood = () => {
                     Additional Notes: 
                     <textarea
                         className="textarea textarea-warning"
-                        placeholder="Movie Summary"
+                        placeholder="Ingrediants"
                         name="notes"
                     ></textarea>
                 </div>
