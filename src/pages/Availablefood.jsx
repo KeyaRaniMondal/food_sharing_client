@@ -10,8 +10,9 @@ const AvailableFood = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   const filteredFoods = foods.filter((food) =>
-    food.food_name.toLowerCase().includes(searchQuery.toLowerCase())
+    food.food_name?.toLowerCase().includes(searchQuery.toLowerCase())
   );
+  
 
   return (
     <div className="w-max pb-4 mt-10 mx-10">

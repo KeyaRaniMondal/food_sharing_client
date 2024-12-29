@@ -39,31 +39,71 @@ const FoodDetails = () => {
   const email = userEmail || user?.email || "No email"
   const photo = userPhoto || user?.photoURL || "No photo"
 
-  //For request delete
   const handleDelete = () => {
     Swal.fire({
       title: "Are you sure?",
-      text: "You won't be able to revert this!",
+      text: "This will delete the food and add it to your requests.",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#d33",
       cancelButtonColor: "#3085d6",
-      confirmButtonText: "Yes, delete it!",
+      confirmButtonText: "Yes, delete and request it!",
     }).then((result) => {
       if (result.isConfirmed) {
+        // Delete from available foods
         fetch(`http://localhost:5000/food_collection/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
-              Swal.fire({
-                title: "Deleted!",
-                text: "Food deleted successfully!",
-                icon: "success",
-                timer: 2000,
-              });
-              navigate("/foodreq");
+              // Add to requested foods
+              fetch("http://localhost:5000/requested_food", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                  _id,
+                  FoodImg,
+                  food_name,
+                  quantity,
+                  location,
+                  time,
+                  notes,
+                  status,
+                  email: user?.email, 
+                  name: user?.displayName || "Anonymous",
+
+
+                }),
+              })
+                .then((res) => res.json())
+                .then((postData) => {
+                  if (postData.insertedId) {
+                    Swal.fire({
+                      title: "Deleted and Requested!",
+                      text: "Food added to your requests.",
+                      icon: "success",
+                      timer: 2000,
+                    });
+                    navigate("/foodreq");
+                  } else {
+                    Swal.fire({
+                      title: "Failed!",
+                      text: "Failed to add the food to requests.",
+                      icon: "error",
+                    });
+                  }
+                })
+                .catch((error) => {
+                  console.error("Error adding food to requests:", error);
+                  Swal.fire({
+                    title: "Error!",
+                    text: "An error occurred while adding the food to requests.",
+                    icon: "error",
+                  });
+                });
             } else {
               Swal.fire({
                 title: "Failed!",
@@ -73,7 +113,7 @@ const FoodDetails = () => {
             }
           })
           .catch((error) => {
-            console.error("Error deleting movie:", error);
+            console.error("Error deleting food:", error);
             Swal.fire({
               title: "Error!",
               text: "An error occurred while deleting the food.",
@@ -83,6 +123,7 @@ const FoodDetails = () => {
       }
     });
   };
+  
 
   return (
     <div className="food-details w-4/5 mx-auto my-10">
@@ -103,17 +144,10 @@ const FoodDetails = () => {
           </div>
         </div>
       </div>
-
-      <button
-        className="btn bg-[#d7da45] mt-5"
-        onClick={() => document.getElementById("food-modal").showModal()}
-      >
-        Request Details
-      </button>
-
-      {/* Modal */}
-      <dialog id="food-modal" className="modal modal-open mr-96">
-        <div className="modal-box relative">
+      <label htmlFor="my_modal_7" className="btn bg-[#d7da45] mt-5">Request Details</label>
+      <input type="checkbox" id="my_modal_7" className="modal-toggle" />
+      <div className="modal" role="dialog">
+        <div className="modal-box">
           <img
             src={FoodImg}
             alt={food_name}
@@ -143,8 +177,8 @@ const FoodDetails = () => {
             </button>
           </div>
         </div>
-      </dialog>
-
+        <label className="modal-backdrop" htmlFor="my_modal_7">Close</label>
+      </div>
     </div>
   );
 };
