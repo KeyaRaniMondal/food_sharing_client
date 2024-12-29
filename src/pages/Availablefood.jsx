@@ -5,18 +5,26 @@ import { AuthContext } from "../providers/authProviders";
 
 const AvailableFood = () => {
 
-    const {user}=useContext(AuthContext)
-  const foods = useLoaderData(); 
+  const { user } = useContext(AuthContext)
+  const foods = useLoaderData();
   const [searchQuery, setSearchQuery] = useState("");
 
   const filteredFoods = foods.filter((food) =>
     food.food_name?.toLowerCase().includes(searchQuery.toLowerCase())
   );
-  
 
+  const [change, setChange] = useState(false)
+  const changeLayout = () => {
+    setChange(true)
+  }
   return (
     <div className="w-max pb-4 mt-10 mx-10">
+
       <h1 className="text-4xl font-bold text-center pb-14">Available Foods</h1>
+
+      <div className="fixed top-28 right-5 z-10">
+        <button onClick={changeLayout} className="bg-blue-500 text-white px-4 py-2 rounded shadow-lg hover:bg-blue-600 transition">Change Layout</button>
+      </div>
 
       <div className="flex justify-center mb-8 ">
         <input
@@ -28,7 +36,9 @@ const AvailableFood = () => {
         />
       </div>
 
-      <div className="grid grid-cols-3 gap-10 text-black mx-20 w-full">
+      <div className={`grid ${change ? "grid-cols-2" : "grid-cols-3"
+        } gap-10 text-black mx-5 md:mx-20 mt-16 w-full`}
+      >
         {filteredFoods.map((food) => (
           <div
             key={food._id}
