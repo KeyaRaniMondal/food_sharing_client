@@ -24,6 +24,9 @@ const NavBar = () => {
                     <NavLink to="/foodreq" className="block lg:inline-block px-3 py-2 hover:text-gray-300 ">
                         My Food Request
                     </NavLink>
+                    <NavLink to="/update" className="block lg:inline-block px-3 py-2 hover:text-gray-300 ">
+                        update Food 
+                    </NavLink>
                 </>
             ) : (
                 <>
