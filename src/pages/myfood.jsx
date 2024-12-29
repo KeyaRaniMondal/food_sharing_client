@@ -49,7 +49,7 @@ const MyFood = () => {
   };
 
   const handleUpdate = (id) => {
-    navigate(`/update-food/${id}`); 
+    navigate(`/food/update/${id}`);  
   };
 
   return (
