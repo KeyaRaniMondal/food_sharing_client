@@ -54,25 +54,32 @@ const Recipe = () => {
 
   return (
     <div className="mx-20">
-      <h1 className="text-3xl font-bold text-center my-5">Recipe List</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mx-5">
-        {recipes.map((recipe) => (
-          <div key={recipe.id} className="card bg-base-100 shadow-xl">
-            <figure>
-              <img
-                src={recipe.image}
-                alt={recipe.name}
-                className="w-full h-48 object-cover"
-              />
-            </figure>
-            <div className="card-body">
-              <h2 className="card-title">{recipe.name}</h2>
-              <p>{recipe.description}</p>
+    <h1 className="text-3xl font-bold text-center my-5">Recipe List</h1>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mx-5">
+      {recipes.map((recipe) => (
+        <div
+          key={recipe.id}
+          className="card bg-base-100 shadow-xl transform transition-transform hover:scale-105 hover:shadow-2xl rounded-lg overflow-hidden"
+        >
+          <figure className="relative group">
+            <img
+              src={recipe.image}
+              alt={recipe.name}
+              className="w-full h-48 object-cover transition-opacity duration-300 group-hover:opacity-75"
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-25 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <p className="text-white font-semibold">View Recipe</p>
             </div>
+          </figure>
+          <div className="card-body p-5">
+            <h2 className="card-title text-lg font-bold text-gray-800">{recipe.name}</h2>
+            <p className="text-gray-600 text-sm">{recipe.description}</p>
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
     </div>
+  </div>
+  
   );
 };
 

@@ -5,15 +5,36 @@ import Swal from "sweetalert2";
 const FoodReq = () => {
   const { user } = useContext(AuthContext);
   const [req, setReq] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (user && user.email) {
-      fetch(`https://food-sharing-server-hazel.vercel.app/requested_food?email=${user.email}`)
-        .then((res) => res.json())
-        .then((data) => setReq(data))
-        .catch((error) => console.error("Error fetching Requests:", error));
+      setLoading(true); // Show loading state
+      fetch(`https://food-sharing-server-hazel.vercel.app/requested_food?email=${user.email}`, { credentials: "include" })
+        .then((res) => {
+          if (!res.ok) {
+            throw new Error("Failed to fetch food requests.");
+          }
+          return res.json();
+        })
+        .then((data) => {
+          setReq(data);
+          setLoading(false);
+        })
+        .catch((error) => {
+          console.error("Error fetching requests:", error);
+          setLoading(false);
+        });
     }
   }, [user]);
+
+  if (loading) {
+    return (
+      <div className="text-center my-10">
+        <h2 className="text-2xl font-semibold">Loading...</h2>
+      </div>
+    );
+  }
 
   return (
     <div className="favorites-container bg-[#e0dae0] p-10">
@@ -24,16 +45,12 @@ const FoodReq = () => {
           {/* Table Header */}
           <thead>
             <tr>
-              <th>
-                <label>
-                  <input type="checkbox" className="checkbox" />
-                </label>
-              </th>
+              <th></th>
               <th>Donor Name</th>
-              <th>Food Name</th>
+              <th>Food Image</th>
               <th>Pickup Location</th>
               <th>Expire Date</th>
-              <th>Current Date</th>
+              <th>Requested Date</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -50,28 +67,19 @@ const FoodReq = () => {
               req.map((food) => (
                 <tr key={food._id}>
                   <td>
-                    <label>
-                      <input type="checkbox" className="checkbox" />
-                    </label>
+                    <input type="checkbox" className="checkbox" />
                   </td>
-                  <td>
-                    <img
-                      src={user.photoURL || "https://via.placeholder.com/50"}
-                      alt="User Photo"
-                      className="w-10 h-10 rounded-full"
-                    />
-                  </td>
-
+                  <td>{food.donorName || "Unknown"}</td>
                   <td>
                     <img
                       src={food.FoodImg || "https://via.placeholder.com/50"}
-                      alt="food Photo"
+                      alt="Food"
                       className="w-10 h-10 rounded-md"
                     />
                   </td>
-                  <td>{food.location}</td>
+                  <td>{food.location || "Not provided"}</td>
                   <td>{new Date(food.time).toLocaleString()}</td>
-                  <td>{new Date().toLocaleString()}</td>
+                  <td>{new Date(food.requestedDate).toLocaleString()}</td>
                   <td>
                     <button
                       className="btn btn-ghost btn-xs"
@@ -79,20 +87,19 @@ const FoodReq = () => {
                         Swal.fire({
                           title: "Details",
                           html: `
-                     <div>
-                       <img
-                         src="${food.FoodImg || "https://via.placeholder.com/50"}"
-                         alt="Food Photo"
-                         style="width: 300px; height: 200px; border-radius: 8px; margin-top: 10px; margin-left:64"
-                       />
-                       <h2>${food.food_name}</h2>
-                       <p>${food.notes}</p>
-                     </div>
-                   `,
+                          <div>
+                            <img
+                              src="${food.FoodImg || "https://via.placeholder.com/50"}"
+                              alt="Food Photo"
+                              style="width: 300px; height: 200px; border-radius: 8px; margin-top: 10px;"
+                            />
+                            <h2>${food.food_name}</h2>
+                            <p>${food.notes}</p>
+                          </div>
+                        `,
                           icon: "info",
                         })
                       }
-
                     >
                       Details
                     </button>

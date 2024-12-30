@@ -1,10 +1,10 @@
 import { NavLink, useLoaderData } from "react-router-dom";
-import NavBar from "../components/navbar";
 import Banner from "../components/banner";
 import Features from "../components/featured";
 import Recipe from "../components/recipe";
 import rivew from "../assets/rivew.jpg";
 import '../App.css'
+import '../index.css'
 
 const Home = () => {
   const foods = useLoaderData();
@@ -16,7 +16,7 @@ const Home = () => {
         <Banner />
       </div>
 
-      <div className="overflow-hidden mt-72">
+      <div className="overflow-hidden mt-40">
         <h1 className="mt-5 text-black text-center">Top fans</h1>
         <div className="running-image">
           <img
@@ -29,7 +29,7 @@ const Home = () => {
       <Features foods={foods} />
       <div className="text-center my-6">
         <NavLink to="/availfood">
-          <button className="btn btn-primary w-40">View All Foods</button>
+          <button className="btn btnfe w-40">View All Foods</button>
         </NavLink>
       </div>
       <div className="my-10">

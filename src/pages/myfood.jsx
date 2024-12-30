@@ -33,6 +33,7 @@ const MyFood = () => {
       if (result.isConfirmed) {
         fetch(`https://food-sharing-server-hazel.vercel.app/food_collection/${id}`, {
           method: "DELETE",
+          credentials: "include", 
         })
           .then((res) => res.json())
           .then((data) => {

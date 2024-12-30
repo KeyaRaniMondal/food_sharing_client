@@ -53,7 +53,9 @@ const FoodDetails = () => {
         // Delete from available foods
         fetch(`https://food-sharing-server-hazel.vercel.app/food_collection/${_id}`, {
           method: "DELETE",
+          credentials: "include", 
         })
+        
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
@@ -63,6 +65,7 @@ const FoodDetails = () => {
                 headers: {
                   "Content-Type": "application/json",
                 },
+                credentials: "include",
                 body: JSON.stringify({
                   _id,
                   FoodImg,
