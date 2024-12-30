@@ -15,6 +15,25 @@
 
 
 
+.running-image {
+  position: relative;
+  animation: scrollImage 10s linear infinite;
+  display: inline-block;
+  width: 100%; /* Ensures the image spans full width */
+}
+
+@keyframes scrollImage {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
 
 
 
