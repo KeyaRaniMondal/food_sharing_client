@@ -66,7 +66,7 @@ const Login = () => {
         <div className="text-center -mt-20">
           <h1 className="text-5xl font-bold">Login Now !!</h1>
           <p className="mt-4 text-black">
-            Login to get unlimited access to movies...
+            Login to get varity of foods...
           </p>
         </div>
         <div className="card bg-[#684747] w-full max-w-sm shrink-0 shadow-2xl">

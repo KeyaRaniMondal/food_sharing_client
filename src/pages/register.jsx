@@ -98,7 +98,7 @@ const Register = () => {
         <div className="text-center">
           <h1 className="text-5xl font-bold text-white">Register First !!</h1>
           <p className="mt-4 text-white">
-            You need to register first to get unlimited movies...
+            You need to register first to get unlimited recipies...
           </p>
         </div>
         <div className="card bg-[#2b0a0a] w-full max-w-sm shrink-0 shadow-2xl">
