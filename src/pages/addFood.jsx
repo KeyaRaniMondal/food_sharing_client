@@ -49,7 +49,7 @@ const AddFood = () => {
         };
 
 
-        fetch("http://localhost:5000/food_collection", {
+        fetch("https://food-sharing-server-hazel.vercel.app/food_collection", {
             method: "POST",
             headers: {
                 "content-type": "application/json",

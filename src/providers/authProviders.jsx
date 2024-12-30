@@ -41,11 +41,11 @@ const AuthProvider = ({ children }) => {
       console.log('state captured', currentUser?.email)
       if (currentUser?.email) {
         const user = { email: currentUser.email }
-        axios.post('http://localhost:5000/jwt', user, { withCredentials: true })
+        axios.post('https://food-sharing-server-hazel.vercel.app/jwt', user, { withCredentials: true })
           .then(res => console.log(res.data))
       }
       else {
-        axios.post('http://localhost:5000/logOut', {}, {
+        axios.post('https://food-sharing-server-hazel.vercel.app/logOut', {}, {
           withCredentials: true
         })
           .then(res => console.log('logout', res.data))

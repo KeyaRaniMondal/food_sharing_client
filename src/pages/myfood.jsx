@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../providers/authProviders";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const MyFood = () => {
   const { user } = useContext(AuthContext);
@@ -10,10 +11,12 @@ const MyFood = () => {
 
   useEffect(() => {
     if (user && user.email) {
-      fetch(`http://localhost:5000/food_collection?email=${user.email}`)
-        .then((res) => res.json())
-        .then((data) => setFoods(data))
-        .catch((error) => console.error("Error fetching foods:", error));
+      // fetch(`https://food-sharing-server-hazel.vercel.app/food_collection?email=${user.email}`)
+      //   .then((res) => res.json())
+      //   .then((data) => setFoods(data))
+      //   .catch((error) => console.error("Error fetching foods:", error));
+      axios.get(`https://food-sharing-server-hazel.vercel.app/food_collection?email=${user.email}`,{withCredentials:true})
+      .then(res=>setFoods(res.data))
     }
   }, [user]);
 
@@ -28,7 +31,7 @@ const MyFood = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/food_collection/${id}`, {
+        fetch(`https://food-sharing-server-hazel.vercel.app/food_collection/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

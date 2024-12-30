@@ -43,7 +43,7 @@ const UpdateFood = () => {
     const updatedFood = {
       notes
     };
-    fetch(`http://localhost:5000/food_collection/${food._id}`, {
+    fetch(`https://food-sharing-server-hazel.vercel.app/food_collection/${food._id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

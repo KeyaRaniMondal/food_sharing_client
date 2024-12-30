@@ -8,7 +8,7 @@ const FoodReq = () => {
 
   useEffect(() => {
     if (user && user.email) {
-      fetch(`http://localhost:5000/requested_food?email=${user.email}`)
+      fetch(`https://food-sharing-server-hazel.vercel.app/requested_food?email=${user.email}`)
         .then((res) => res.json())
         .then((data) => setReq(data))
         .catch((error) => console.error("Error fetching Requests:", error));

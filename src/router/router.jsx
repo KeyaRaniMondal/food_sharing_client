@@ -20,12 +20,12 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/food_collection"), 
+        loader: () => fetch("https://food-sharing-server-hazel.vercel.app/food_collection"), 
       },
       {
         path: "/availfood",
         element: <AvailableFood />,
-        loader: () => fetch("http://localhost:5000/food_collection").then((res) => res.json()),
+        loader: () => fetch("https://food-sharing-server-hazel.vercel.app/food_collection").then((res) => res.json()),
       },
       {
         path: "/food/:id",
@@ -34,7 +34,7 @@ const router = createBrowserRouter([
             <FoodDetails></FoodDetails>
           </PrivateRoute>
         ),
-        loader: ({ params }) => fetch(`http://localhost:5000/food_collection/${params.id}`)
+        loader: ({ params }) => fetch(`https://food-sharing-server-hazel.vercel.app/food_collection/${params.id}`,{credentials:'include'})
       },
       {
         path: "/addFood",
@@ -42,11 +42,9 @@ const router = createBrowserRouter([
       },
       {
         path: "/manageFood",
-        element: (
-          <PrivateRoute>
+        element:
             <MyFood></MyFood>
-          </PrivateRoute>
-        )
+
 
       },
       {
@@ -56,12 +54,12 @@ const router = createBrowserRouter([
             <UpdateFood></UpdateFood>
           </PrivateRoute>),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/food_collection/${params.id}`),
+          fetch(`https://food-sharing-server-hazel.vercel.app/food_collection/${params.id}`,{credentials:'include'}),
       },
       {
         path: "/foodreq",
         element: <FoodReq></FoodReq>,
-        loader: () => fetch("http://localhost:5000/requested_food"),
+        loader: () => fetch("https://food-sharing-server-hazel.vercel.app/requested_food",{credentials:'include'}),
       },
       {
         path: "/register",

@@ -51,14 +51,14 @@ const FoodDetails = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         // Delete from available foods
-        fetch(`http://localhost:5000/food_collection/${_id}`, {
+        fetch(`https://food-sharing-server-hazel.vercel.app/food_collection/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
               // Add to requested foods
-              fetch("http://localhost:5000/requested_food", {
+              fetch("https://food-sharing-server-hazel.vercel.app/requested_food", {
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json",
