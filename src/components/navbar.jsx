@@ -40,10 +40,11 @@ const NavBar = () => {
 
     return (
         <div className="navbar bg-black text-white px-5 lg:px-20 py-3">
-      <div className="flex justify-between items-center w-full">
-      <div className="flex-1">
+                  <div className="flex-1 mr-20">
     <a className="btn btn-ghost text-xl">SAVOURY</a>
   </div>
+      <div className="hidden lg:flex justify-between items-center w-full ">
+
                 <div className="space-x-5 text-white font-bold">{links}</div>
                 {user ? (
                     <div className="ml-20 dropdown dropdown-end">

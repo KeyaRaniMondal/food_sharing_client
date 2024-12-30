@@ -1,8 +1,27 @@
-# React + Vite
+project name, purpose, live URL, key features, and any npm packages 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- assignment_category_07 
 
-Currently, two official plugins are available:
+# Project Name: Food Sharing Website
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- purpose:
+food sharing websites play a crucial role in addressing the global issue of food waste while promoting a more equitable and sustainable food system.
+
+- live URL client : https://food-sharing-1d765.web.app/
+
+- live URL server : https://food-sharing-server-hazel.vercel.app/
+
+- key features :
+- eye catching UI
+- add food
+- update and delete food
+- verify users using jwt
+- add food to my request after deleting
+- see details
+
+
+- npm packages:
+- Axios
+- React loader
+- jwt
+
