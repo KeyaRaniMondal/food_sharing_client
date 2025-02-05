@@ -29,18 +29,18 @@ This project leverages modern web technologies for an optimal user experience:
 The following **npm packages** are used in this project:  
 
  "dependencies": {
-    "axios": "^1.7.9",
-    "firebase": "^11.1.0",
-    "localforage": "^1.10.0",
-    "match-sorter": "^8.0.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-icons": "^5.4.0",
-    "react-router-dom": "^7.1.1",
-    "react-toastify": "^11.0.2",
-    "sort-by": "^1.2.0",
-    "sweetalert2": "^11.15.3"
-  }
+   - "axios": "^1.7.9",
+   - "firebase": "^11.1.0",
+   - "localforage": "^1.10.0",
+   - "match-sorter": "^8.0.0",
+  -  "react": "^18.3.1",
+   - "react-dom": "^18.3.1",
+  -  "react-icons": "^5.4.0",
+  -  "react-router-dom": "^7.1.1",
+   - "react-toastify": "^11.0.2",
+   - "sort-by": "^1.2.0",
+  -  "sweetalert2": "^11.15.3"
+-  }
   
 # A step-by-step guide on how to run the project locally:
 ## 📥 Installation
@@ -48,15 +48,15 @@ The following **npm packages** are used in this project:
 1. Clone the repository:
 
    git clone [https://github.com/KeyaRaniMondal/food_sharing_client.git]
-   cd food_sharing_client
+  - cd food_sharing_client
    
 2. Install dependencies:
     - npm install
       
 3. Start the development server:
-    npm run dev
+   - npm run dev
 
 ## 🌐 Live Demo
 🔗 [SAVOURY]( https://food-sharing-1d765.web.app/)
 or
-🔗 server: (https://food-sharing-server-hazel.vercel.app/)
+-🔗 server: (https://food-sharing-server-hazel.vercel.app/)
