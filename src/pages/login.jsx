@@ -56,11 +56,11 @@ const Login = () => {
   };
 
   return (
-    <div
+    <div 
       style={{
         // backgroundImage: `url(${login})`,
       }}
-      className="hero bg-base-200 min-h-screen"
+      className="hero bg-base-200 min-h-screen mt-16"
     >
       <div className="hero-content flex-col">
         <div className="text-center -mt-20">
@@ -110,7 +110,7 @@ const Login = () => {
               </button>
             </div>
           </form>
-          <ToastContainer />
+          <ToastContainer className='mt-28' />
           <div className="divider text-white -mt-5">OR</div>
           <button
             onClick={handleGoogleSignIn}

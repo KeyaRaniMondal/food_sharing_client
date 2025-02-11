@@ -13,6 +13,7 @@ const AddFood = () => {
     const FoodImg = form.FoodImg.value.trim();
     const food_name = form.food_name.value.trim();
     const quantity = form.quantity.value.trim();
+    const price = form.price.value.trim();
     const location = form.location.value.trim();
     const time = form.time.value;
     const notes = form.notes.value.trim();
@@ -31,6 +32,10 @@ const AddFood = () => {
       toast.error("Quantity must be a valid positive number.");
       return;
     }
+    if (!price || isNaN(price) || price <= 0) {
+      toast.error("Price must be a valid positive number.");
+      return;
+    }
     if (!location) {
       toast.error("Pickup location is required.");
       return;
@@ -44,6 +49,7 @@ const AddFood = () => {
       FoodImg,
       food_name,
       quantity,
+      price,
       location,
       time,
       notes,
@@ -140,6 +146,15 @@ const AddFood = () => {
           name="status"
           defaultValue="available"
           readOnly
+          className="input input-bordered input-warning w-full"
+        />
+      </div>
+      <div className="font-bold mb-2">
+        Food Price:
+        <input
+          type="number"
+          name="price"
+          placeholder="Food Price"
           className="input input-bordered input-warning w-full"
         />
       </div>

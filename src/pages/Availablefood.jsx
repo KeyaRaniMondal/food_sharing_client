@@ -18,12 +18,12 @@ const AvailableFood = () => {
     setChange(true)
   }
   return (
-    <div className="w-max pb-4 mt-10 mx-10">
+    <div className="w-max  pb-4 mt-28 mx-10">
 
       <h1 className="text-4xl font-bold text-center pb-14">Available Foods</h1>
 
-      <div className="fixed top-28 right-5 z-10">
-        <button onClick={changeLayout} className="bg-[#76e25a] text-white px-4 py-2 rounded-full shadow-lg hover:bg-blue-600 transition">Change Layout</button>
+      <div className=" top-28 right-5 z-10">
+        <button onClick={changeLayout} className="bg-[#64865b] text-white px-4 py-2 rounded-full shadow-lg hover:bg-blue-600 transition">Change Layout</button>
       </div>
 
       <div className="flex justify-center mb-8 ">
@@ -51,7 +51,8 @@ const AvailableFood = () => {
             }}
           >
             <div>
-              <h1 className="text-xl font-bold">{food.food_name}</h1>
+              <h1 className="text-xl font-bold text-white">{food.food_name}</h1>
+              <h1 className="text-xl font-bold text-white ">{food.price}</h1>
               <p className="text-sm">{food.status ? "Available" : "Not Available"}</p>
             </div>
             <Link to={`/food/${food._id}`}>

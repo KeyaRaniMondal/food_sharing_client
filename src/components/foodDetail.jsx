@@ -129,7 +129,7 @@ const FoodDetails = () => {
   
 
   return (
-    <div className="food-details w-4/5 mx-auto my-10">
+    <div className="food-details w-4/5 mx-auto my-10 mt-28">
       <div className="flex items-center justify-between">
         <h1 className="text-3xl font-bold text-black">{food_name}</h1>
       </div>
