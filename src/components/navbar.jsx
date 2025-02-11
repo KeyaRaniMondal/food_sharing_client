@@ -39,11 +39,11 @@ const NavBar = () => {
     );
 
     return (
-        <div className="navbar bg-black text-white px-5 lg:px-20 py-3">
-                  <div className="flex-1 mr-20">
-    <a className="btn btn-ghost text-xl">SAVOURY</a>
-  </div>
-      <div className="hidden lg:flex justify-between items-center w-full ">
+        <div className="navbar fixed top-0 left-0 right-0 z-50 bg-black text-white px-5 lg:px-20 py-3">
+            <div className="flex-1 mr-20">
+                <a className="btn btn-ghost text-xl">SAVOURY</a>
+            </div>
+            <div className="hidden lg:flex justify-between items-center w-full ">
 
                 <div className="space-x-5 text-white font-bold">{links}</div>
                 {user ? (
@@ -63,7 +63,7 @@ const NavBar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+                            className="menu menu-sm dropdown-content bg-white text-black rounded-box z-[1] mt-3 w-52 p-2 shadow"
                         >
                             <li>
                                 <a className="justify-between">
@@ -105,7 +105,7 @@ const NavBar = () => {
                     </label>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 text-black"
+                        className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 text-black -ml-20"
                     >
                         {links}
                         {user && (

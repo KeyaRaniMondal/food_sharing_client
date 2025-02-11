@@ -8,8 +8,8 @@ const Features = () => {
     .slice(0, 6);
 
   return (
-    <div className="w-max h-screen mt-14 mx-32">
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-5 py-10 text-[#ec5e73] -ml-14">
+    <div className=" h-screen mt-14 mx-32">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-5 py-10 text-[#e05469] -ml-14">
       {sortedFoods.length > 0 ? (
         sortedFoods.map((food) => (
           <div

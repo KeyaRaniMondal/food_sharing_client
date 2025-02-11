@@ -77,84 +77,95 @@ const AddFood = () => {
   };
 
   return (
-    <div className="bg-[#bddbbd]">
-      <h1 className="text-3xl font-bold text-center py-10">Add Foods to SAVOURY</h1>
-      <img src={addfood} alt="" className="flex mx-auto justify-center h-40 w-96" />
-      <form onSubmit={handleSubmit} className="text-left mx-40 w-full ml-96 mt-10">
-        <div className="flex gap-5">
-          <div className="font-bold mb-2">
-            Food Image:
-            <input
-              type="text"
-              name="FoodImg"
-              placeholder="Enter image"
-              className="input input-bordered input-warning w-full max-w-xs"
-            />
-          </div>
-          <div className="font-bold mb-2">
-            Food Name:
-            <input
-              type="text"
-              name="food_name"
-              placeholder="Enter Food Name"
-              className="input input-bordered input-warning w-full max-w-xs"
-            />
-          </div>
-        </div>
-        <div className="flex gap-5">
-          <div className="font-bold mb-2">
-            Food Quantity:
-            <input
-              type="number"
-              name="quantity"
-              placeholder="Food Quantity"
-              className="input input-bordered input-warning w-full max-w-xs"
-            />
-          </div>
-          <div className="font-bold mb-2 -ml-6">
-            Pickup Location:
-            <input
-              type="text"
-              name="location"
-              placeholder="Enter Location"
-              className="input input-bordered input-warning w-full max-w-xs"
-            />
-          </div>
-        </div>
-        <div className="flex gap-5">
-          <div className="font-bold mb-2">
-            Expire Date/Time:
-            <input
-              type="datetime-local"
-              name="time"
-              className="input input-bordered input-warning w-full max-w-xs"
-            />
-          </div>
-          <div className="font-bold mb-2 -ml-12">
-            Food Status:
-            <input
-              type="text"
-              name="status"
-              defaultValue="available"
-              readOnly
-              className="input input-bordered input-warning w-full max-w-xs"
-            />
-          </div>
-        </div>
-        <div className="flex gap-5 font-bold w-96">
-          Additional Notes:
-          <textarea
-            className="textarea textarea-warning"
-            placeholder="Ingredients or additional details"
-            name="notes"
-          ></textarea>
-        </div>
-        <button type="submit" className="btn btn-wide btnu my-8 ml-40">
-          Add Food
-        </button>
-        <ToastContainer position="top-right" />
-      </form>
+<div className="bg-[#bddbbd]">
+  <h1 className="text-3xl font-bold text-center py-10">Add Foods to SAVOURY</h1>
+  <img src={addfood} alt="" className="flex mx-auto justify-center h-40 w-96" />
+  
+  <form onSubmit={handleSubmit} className="text-left mx-5 sm:mx-10 lg:mx-40  mt-10">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+      <div className="font-bold mb-2">
+        Food Image:
+        <input
+          type="text"
+          name="FoodImg"
+          placeholder="Enter image"
+          className="input input-bordered input-warning w-full"
+        />
+      </div>
+      <div className="font-bold mb-2">
+        Food Name:
+        <input
+          type="text"
+          name="food_name"
+          placeholder="Enter Food Name"
+          className="input input-bordered input-warning w-full"
+        />
+      </div>
     </div>
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-5">
+      <div className="font-bold mb-2">
+        Food Quantity:
+        <input
+          type="number"
+          name="quantity"
+          placeholder="Food Quantity"
+          className="input input-bordered input-warning w-full"
+        />
+      </div>
+      <div className="font-bold mb-2">
+        Pickup Location:
+        <input
+          type="text"
+          name="location"
+          placeholder="Enter Location"
+          className="input input-bordered input-warning w-full"
+        />
+      </div>
+    </div>
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-5">
+      <div className="font-bold mb-2">
+        Expire Date/Time:
+        <input
+          type="datetime-local"
+          name="time"
+          className="input input-bordered input-warning w-full"
+        />
+      </div>
+      <div className="font-bold mb-2">
+        Food Status:
+        <input
+          type="text"
+          name="status"
+          defaultValue="available"
+          readOnly
+          className="input input-bordered input-warning w-full"
+        />
+      </div>
+    </div>
+
+    <div className="mt-5">
+      <div className="font-bold">
+        Additional Notes:
+        <textarea
+          className="textarea textarea-warning w-full"
+          placeholder="Ingredients or additional details"
+          name="notes"
+        ></textarea>
+      </div>
+    </div>
+
+    <div className="text-center mt-8">
+      <button type="submit" className="btn btn-wide btnu mb-8">
+        Add Food
+      </button>
+    </div>
+    <ToastContainer position="top-right" />
+  </form>
+</div>
+
+
   );
 };
 
