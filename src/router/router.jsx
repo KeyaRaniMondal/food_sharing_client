@@ -11,6 +11,7 @@ import Login from "../pages/login";
 import FoodDetails from "../components/foodDetail";
 import PrivateRoute from "./privateRoute";
 import UpdateFood from "../components/update";
+import Error from "../pages/error";
 
 const router = createBrowserRouter([
   {
@@ -71,6 +72,10 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path:'*',
+    element:<Error></Error>
+  }
 ]);
 
 export default router;
