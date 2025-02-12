@@ -51,7 +51,7 @@ const AvailableFood = () => {
         </select>
       </div>
 
-      <div className={`grid ${change ? "grid-cols-2" : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"} gap-10 text-black mx-5 md:mx-20 mt-16 w-full`}>
+      <div className={`grid ${change ? "grid-cols-2" : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"} gap-10 text-black mx-auto md:mx-auto mt-16 w-full`}>
         {filteredFoods.map((food) => (
           <div
             key={food._id}

@@ -12,6 +12,9 @@
 .btn1{
     background: linear-gradient(to bottom, #cc6600 0%, #ffff66 100%);
   }
+.btn2{
+    background: linear-gradient(to bottom, #141413 0%, #ffff66 100%);
+  }
 
 .btnfe{
     background: linear-gradient(to bottom, #db301a 0%, #df6513 100%);

@@ -12,6 +12,8 @@ import FoodDetails from "../components/foodDetail";
 import PrivateRoute from "./privateRoute";
 import UpdateFood from "../components/update";
 import Error from "../pages/error";
+import ReviewSection from "../components/rivew";
+import AllReviews from "../pages/allReviews";
 
 const router = createBrowserRouter([
   {
@@ -69,6 +71,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login></Login>,
+      },
+      {
+        path: "/review",
+        element: <AllReviews></AllReviews>
       },
     ],
   },

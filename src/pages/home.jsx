@@ -16,21 +16,10 @@ const Home = () => {
       <div className="h-80 w-full">
         <Banner />
       </div>
-
-      {/* <div className="overflow-hidden mt-40">
-        <h1 className="mt-5 text-base-content text-center">Top fans</h1>
-        <div className="running-image">
-          <img
-            src={rivew}
-            alt="Review Section"
-            className=" object-cover"
-          />
-        </div>
-      </div> */}
       <Features foods={foods} />
       <div className="text-center my-6">
         <NavLink to="/availfood">
-          <button className="btn btnfe w-40">View All Foods</button>
+          <button className="btn btn1 w-40">View All Foods</button>
         </NavLink>
       </div>
       <div className="my-10">

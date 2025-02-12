@@ -28,6 +28,9 @@ const NavBar = () => {
                 </>
             ) : (
                 <>
+                    <NavLink to="/review" className="block lg:inline-block px-3 py-2 hover:text-gray-300 ">
+                        Reviews
+                    </NavLink>
                     <NavLink to="/login" className="block lg:inline-block px-3 py-2 hover:text-gray-300 ">
                         Login
                     </NavLink>
