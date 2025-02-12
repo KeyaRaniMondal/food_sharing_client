@@ -1,5 +1,5 @@
 
-<img class="screenshot" src="https://github.com/user-attachments/assets/599b55a2-31c4-47a3-bd25-4021525df1bc" alt="Chatchrip Forum Screenshot">
+<img class="screenshot" src="https://github.com/user-attachments/assets/2888f1cb-e457-4805-a0a3-8723e21ad8e9" alt="Chatchrip Forum Screenshot">
 
 
 # 🥗 SAVOURY
