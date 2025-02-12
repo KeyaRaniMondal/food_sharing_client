@@ -17,8 +17,8 @@ const Home = () => {
         <Banner />
       </div>
 
-      <div className="overflow-hidden mt-40">
-        <h1 className="mt-5 text-black text-center">Top fans</h1>
+      {/* <div className="overflow-hidden mt-40">
+        <h1 className="mt-5 text-base-content text-center">Top fans</h1>
         <div className="running-image">
           <img
             src={rivew}
@@ -26,7 +26,7 @@ const Home = () => {
             className=" object-cover"
           />
         </div>
-      </div>
+      </div> */}
       <Features foods={foods} />
       <div className="text-center my-6">
         <NavLink to="/availfood">

@@ -72,8 +72,8 @@ const Recipe = () => {
             </div>
           </figure>
           <div className="card-body p-5">
-            <h2 className="card-title text-lg font-bold text-gray-800">{recipe.name}</h2>
-            <p className="text-gray-600 text-sm">{recipe.description}</p>
+            <h2 className="card-title text-lg font-bold text-base-content">{recipe.name}</h2>
+            <p className=" text-base-content text-sm">{recipe.description}</p>
           </div>
         </div>
       ))}

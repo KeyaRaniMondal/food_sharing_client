@@ -8,8 +8,8 @@ const Features = () => {
     .slice(0, 6);
 
   return (
-    <div className=" h-screen mt-14 mx-32">
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-5 py-10 text-[#2c2526] -ml-14">
+    <div className=" h-screen mt-72 mx-20">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mx-5">
       {sortedFoods.length > 0 ? (
         sortedFoods.map((food) => (
           <div
@@ -32,7 +32,7 @@ const Features = () => {
               <p className="text-sm">{food.notes}</p>
             </div> */}
             <Link to={`/food/${food._id}`}>
-              <button className="btn btn1 mt-4 bg-green-600 hover:bg-green-700 transition-colors duration-300">
+              <button className="btn btn1 mt-4 bg-green-600 hover:bg-green-700 transition-colors duration-300 text-black">
                 See Details
               </button>
             </Link>

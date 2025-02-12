@@ -92,7 +92,7 @@ const Register = () => {
       style={{
         // backgroundImage: `url(${})`,
       }}
-      className="hero bg-base-200 min-h-screen"
+      className="hero bg-base-200 min-h-screen mt-16"
     >
       <div className="hero-content flex-col">
         <div className="text-center">

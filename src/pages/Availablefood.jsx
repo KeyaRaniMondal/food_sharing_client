@@ -24,7 +24,7 @@ const AvailableFood = () => {
   };
 
   return (
-    <div className="w-max pb-4 mt-28 mx-10">
+    <div className="w-max pb-4 mt-28 mx-auto">
       <h1 className="text-4xl font-bold text-center pb-14">Available Foods</h1>
 
       <div className="flex justify-between items-center mb-8 mx-5 md:mx-20">
