@@ -2,7 +2,8 @@ import { NavLink, useLoaderData } from "react-router-dom";
 import Banner from "../components/banner";
 import Features from "../components/featured";
 import Recipe from "../components/recipe";
-import rivew from "../assets/rivew.jpg";
+import ReviewSection from "../components/rivew";
+
 import '../App.css'
 import '../index.css'
 
