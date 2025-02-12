@@ -5,7 +5,6 @@ import Recipe from "../components/recipe";
 import rivew from "../assets/rivew.jpg";
 import '../App.css'
 import '../index.css'
-import Rivew from "../components/rivew";
 
 const Home = () => {
   const foods = useLoaderData();
@@ -36,7 +35,7 @@ const Home = () => {
       <div className="my-10">
         <Recipe />
       </div>
-      <Rivew></Rivew>
+      <ReviewSection></ReviewSection>
     </div>
   );
 };
