@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../providers/authProviders";
+import { FaCircleUser } from "react-icons/fa6";
 
 const NavBar = () => {
 
@@ -43,7 +44,7 @@ const NavBar = () => {
             <div className="flex-1 mr-20">
                 <a className="btn btn-ghost text-xl">SAVOURY</a>
             </div>
-            <div className="hidden lg:flex justify-between items-center w-full ">
+            <div className="hidden lg:flex justify-around items-center w-full ">
 
                 <div className="space-x-5 text-white font-bold">{links}</div>
                 {user ? (
@@ -77,11 +78,12 @@ const NavBar = () => {
                         </ul>
                     </div>
                 ) : (
-                    <img
-                        alt="User Avatar"
-                        src="https://via.placeholder.com/40"
-                        className="rounded-full"
-                    />
+
+                    <div className="avatar">
+                        <div className="w-10 h-10 rounded-full">
+                            <FaCircleUser className="w-10 h-10" />
+                        </div>
+                    </div>
                 )}
             </div>
 

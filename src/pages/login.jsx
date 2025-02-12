@@ -53,16 +53,23 @@ const Login = () => {
     } finally {
       setLoading(false);
     }
+
   };
 
+  const handleNavigate = () => {
+    navigate('/')
+  }
+
   return (
-    <div 
+    <div
       style={{
         // backgroundImage: `url(${login})`,
       }}
       className="hero bg-base-200 min-h-screen mt-16"
     >
+
       <div className="hero-content flex-col">
+        <button onClick={handleNavigate} className="btn btn-outline -ml-[1000px]  mt-10 font-bold">Home Page</button>
         <div className="text-center -mt-20">
           <h1 className="text-5xl font-bold">Login Now !!</h1>
           <p className="mt-4 text-black">
