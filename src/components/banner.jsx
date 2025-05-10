@@ -1,23 +1,28 @@
-import banner from "../assets/bannerbg.jpg";
-import cupon from "../assets/cupon.jpg";
+import banner from "../assets/banner.jpg";
 
 const Banner = () => {
   return (
     <div
       style={{
         backgroundImage: `url(${banner})`,
-        backgroundSize: "cover", 
+        backgroundSize: "cover",
         backgroundPosition: "center",
-        height: "60vh", 
       }}
-      className="relative"
+      className="relative h-[70vh] flex items-center justify-center"
     >
-      <div className="absolute -bottom-20 left-0 ">
-        <img src={cupon} alt="Coupon" className="h-28 md:h-48 lg:h-64" />
+
+      <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+
+      <div className="relative text-center text-white px-4">
+        <h2 className="text-2xl md:text-4xl font-bold mb-4">
+          FRESH MEAL IDEAS & RECIPE INSPIRATION
+        </h2>
+        <p className="text-sm md:text-lg max-w-2xl mx-auto">
+          Find recipes for whatever you're craving, plus tips on how to make each dish stand out.
+        </p>
       </div>
     </div>
   );
 };
 
 export default Banner;
-
