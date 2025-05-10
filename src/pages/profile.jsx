@@ -1,18 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import { UserPlus, Star, Trophy, Zap } from "lucide-react";
 import { Card, CardContent } from "../components/Card";
+import { AuthContext } from "../providers/authProviders";
 
 const Profile=()=>{
+    const{user}=useContext(AuthContext)
   return (
     <div className=" mt-52">
       <div className="bg-[#dddcdc] rounded-2xl shadow-xl p-4 max-w-md mx-auto -mt-16">
         <div className="flex flex-col items-center">
           <img
-            src="https://via.placeholder.com/100"
+            src={user.photoURL}
             alt="User"
             className="w-24 h-24 rounded-full border-4 border-white -mt-12 shadow-md"
           />
-          <h2 className="text-xl font-semibold mt-2">Lucas Bennett</h2>
+          <h2 className="text-xl font-semibold mt-2">{user.displayName}</h2>
           <p className="text-sm text-gray-500">lucasbennett@gmail.com</p>
           <div className="flex gap-6 mt-4">
             <div className="text-center">
