@@ -96,16 +96,16 @@ const Register = () => {
     >
       <div className="hero-content flex-col">
         <div className="text-center">
-          <h1 className="text-5xl font-bold text-white">Register First !!</h1>
-          <p className="mt-4 text-white">
+          <h1 className="text-5xl font-bold">Register First !!</h1>
+          <p className="mt-4 ">
             You need to register first to get unlimited recipies...
           </p>
         </div>
-        <div className="card bg-[#2b0a0a] w-full max-w-sm shrink-0 shadow-2xl">
+        <div className="card  w-full max-w-sm shrink-0 shadow-2xl">
           <form onSubmit={handleRegister} className="card-body">
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-white">Name</span>
+                <span className="label-text ">Name</span>
               </label>
               <input
                 type="text"
@@ -117,7 +117,7 @@ const Register = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-white">Email</span>
+                <span className="label-text ">Email</span>
               </label>
               <input
                 type="email"
@@ -129,7 +129,7 @@ const Register = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-white">Photo URL</span>
+                <span className="label-text ">Photo URL</span>
               </label>
               <input
                 type="text"
@@ -140,7 +140,7 @@ const Register = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-white">Password</span>
+                <span className="label-text ">Password</span>
               </label>
               <input
                 type="password"
@@ -151,21 +151,21 @@ const Register = () => {
               />
             </div>
             <div className="form-control mt-6">
-              <button className="btn btn1">Register</button>
+              <button className="btn btn-outline ">Register</button>
             </div>
 
           </form>
           <ToastContainer />
-        <div className="divider -mt-5">OR</div>
+        <div className="divider -mt-5 ">OR</div>
 
         <button
           onClick={handleGoogleSignIn}
-          className="btn bg-white border border-gray-300 text-black flex items-center justify-center mx-auto w-72 -mt-5"
+          className="btn bg-white border border-gray-300 text-black flex items-center justify-center mx-auto w-72 "
         >
           <FcGoogle className="mr-2" /> Sign in with Google
         </button>
         {error.google && <p className="text-red-500 text-sm mt-2">{error.google}</p>}
-        <p className="text-white pb-5 text-center">
+        <p className=" pb-5 text-center mt-2">
               Already have an account?{" "}
               <NavLink to={"/login"} className="text-[#c5942a]">
                 Login

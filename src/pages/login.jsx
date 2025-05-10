@@ -67,38 +67,38 @@ const handleSubmit = async (e) => {
         <div className="w-full md:w-1/2">
           <div className="text-center mb-6">
             <h1 className="text-3xl md:text-5xl font-bold mt-10">Login Now !!</h1>
-            <p className="mt-4 text-black">Login to get variety of foods...</p>
+            <p className="mt-4 ">Login to get variety of foods...</p>
           </div>
-          <div className="card bg-[#2b0a0a] w-full max-w-sm mx-auto shadow-2xl p-6">
+          <div className="card w-full max-w-sm mx-auto shadow-2xl p-6">
             <form onSubmit={handleSubmit} className="card-body">
               <div className="form-control">
-                <label className="label text-white">Email</label>
+                <label className="label ">Email</label>
                 <input type="email" name="email" placeholder="email" className="input input-bordered" required />
                 {error.email && <p className="text-red-500 text-sm mt-2">{error.email}</p>}
               </div>
               <div className="form-control">
-                <label className="label text-white">Password</label>
+                <label className="label ">Password</label>
                 <input type="password" name="password" placeholder="password" className="input input-bordered" required />
                 <label className="label">
                   <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                 </label>
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn1" disabled={loading}>{loading ? "Logging in..." : "Login"}</button>
+                <button className="btn btn-outline " disabled={loading}>{loading ? "Logging in..." : "Login"}</button>
               </div>
             </form>
             <ToastContainer className='mt-28' />
-            <div className="divider text-white -mt-5">OR</div>
-            <button onClick={handleGoogleSignIn} className="btn bg-white border border-gray-300 text-black flex items-center justify-center mx-auto w-64" disabled={loading}>
+            <div className="divider  -mt-5">OR</div>
+            <button onClick={handleGoogleSignIn} className="btn bg-white border border-gray-300  flex items-center justify-center mx-auto w-64" disabled={loading}>
               <FcGoogle className="mr-2" /> Sign in with Google
             </button>
             {error.google && <p className="text-red-500 text-sm mt-2">{error.google}</p>}
-            <p className="text-white my-3 text-center">
+            <p className=" my-3 text-center">
               Don't have an account? <NavLink to={"/register"} className="text-[#c5942a]">Register</NavLink>
             </p>
           </div>
         </div>
-        <button onClick={() => document.getElementById('my_modal_2').showModal()} className="btn1 text-black px-4 py-2 rounded mb-4">
+        <button onClick={() => document.getElementById('my_modal_2').showModal()} className="btn btn-outline text-[#2e7c1a] px-4 py-2 rounded mb-4">
           Show Credentials
         </button>
         <dialog id="my_modal_2" className="modal">
