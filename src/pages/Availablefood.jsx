@@ -1,4 +1,3 @@
-
 import React, { useContext, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -24,24 +23,27 @@ const AvailableFood = () => {
   };
 
   return (
-    <div className="w-max pb-4 mt-28 mx-auto">
-      <h1 className="text-4xl font-bold text-center pb-14">Available Foods</h1>
+    <div className="w-full max-w-screen-xl px-4 md:px-8 pb-4 mt-28 mx-auto">
+      <h1 className="text-3xl md:text-4xl font-bold text-center pb-14">Available Foods</h1>
 
-      <div className="flex justify-between items-center mb-8 mx-5 md:mx-20">
-        <div className=" ">
-          <button onClick={changeLayout} className="bg-black text-white px-4 py-2 rounded-full shadow-lg hover:bg-blue-600 transition">Change Layout</button>
-        </div>
+      <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-8">
+        <button
+          onClick={changeLayout}
+          className="bg-black text-white px-4 py-2 rounded-full shadow-lg hover:bg-blue-600 transition"
+        >
+          Change Layout
+        </button>
 
         <input
           type="text"
           placeholder="Search foods by name..."
-          className="w-1/3 px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-300"
+          className="w-full md:w-1/3 px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-300"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />
 
         <select
-          className="px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-300 "
+          className="w-full md:w-auto px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-300"
           value={sortOrder}
           onChange={(e) => setSortOrder(e.target.value)}
         >
@@ -51,11 +53,15 @@ const AvailableFood = () => {
         </select>
       </div>
 
-      <div className={`grid ${change ? "grid-cols-2" : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"} gap-10 text-black mx-auto md:mx-auto mt-16 w-full`}>
+      <div
+        className={`grid ${
+          change ? "grid-cols-1 sm:grid-cols-2" : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+        } gap-6 md:gap-10 mt-10 w-full`}
+      >
         {filteredFoods.map((food) => (
           <div
             key={food._id}
-            className="h-80 flex flex-col justify-between p-14"
+            className="h-80 flex flex-col justify-between p-6 md:p-14 text-white rounded-lg shadow-lg"
             style={{
               backgroundImage: `url(${food.FoodImg})`,
               backgroundRepeat: "no-repeat",
@@ -63,9 +69,9 @@ const AvailableFood = () => {
               backgroundPosition: "center",
             }}
           >
-            <div className="bg-[#f8f5f5] bg-opacity-40">
-              <h1 className="text-xl font-bold">{food.food_name}</h1>
-              <h1 className="text-xl font-bold ">${food.price}</h1>
+            <div className="bg-[#f8f5f5] text-black p-3 rounded bg-opacity-60">
+              <h1 className="text-lg font-bold">{food.food_name}</h1>
+              <h1 className="text-lg font-bold">${food.price}</h1>
               <p className="text-sm">{food.status ? "Available" : "Not Available"}</p>
             </div>
             <Link to={`/food/${food._id}`}>
@@ -76,7 +82,7 @@ const AvailableFood = () => {
       </div>
 
       {filteredFoods.length === 0 && (
-        <p className="text-center text-lg text-gray-500">No foods found.</p>
+        <p className="text-center text-lg text-gray-500 mt-10">No foods found.</p>
       )}
     </div>
   );

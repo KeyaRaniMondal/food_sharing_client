@@ -8,33 +8,33 @@ const NavBar = () => {
     const { user, logOut } = useContext(AuthContext)
     const links = (
         <>
-            <NavLink to="/" className="block lg:inline-block px-3 py-2 hover:text-[#d6564c] ">
+            <NavLink to="/" className="block lg:inline-block px-3 py-2 hover:text-[#d6a64c] ">
                 Home
             </NavLink>
-            <NavLink to="/availfood" className="block lg:inline-block px-3 py-2 hover:text-gray-300 ">
+            <NavLink to="/availfood" className="block lg:inline-block px-3 py-2 hover:text-[#d6a64c]">
                 Available Foods
             </NavLink>
             {user ? (
                 <>
-                    <NavLink to="/addFood" className="block lg:inline-block px-3 py-2 hover:text-gray-300 ">
+                    <NavLink to="/addFood" className="block lg:inline-block px-3 py-2 hover:text-[#d6a64c] ">
                         Add Food
                     </NavLink>
-                    <NavLink to="/manageFood" className="block lg:inline-block px-3 py-2 hover:text-gray-300 ">
+                    <NavLink to="/manageFood" className="block lg:inline-block px-3 py-2 hover:text-[#d6a64c] ">
                         Manage My Foods
                     </NavLink>
-                    <NavLink to="/foodreq" className="block lg:inline-block px-3 py-2 hover:text-gray-300 ">
+                    <NavLink to="/foodreq" className="block lg:inline-block px-3 py-2 hover:text-[#d6a64c] ">
                         My Food Request
                     </NavLink>
                 </>
             ) : (
                 <>
-                    <NavLink to="/review" className="block lg:inline-block px-3 py-2 hover:text-gray-300 ">
+                    <NavLink to="/review" className="block lg:inline-block px-3 py-2 hover:text-[#d6a64c] ">
                         Reviews
                     </NavLink>
-                    <NavLink to="/login" className="block lg:inline-block px-3 py-2 hover:text-gray-300 ">
+                    <NavLink to="/login" className="block lg:inline-block px-3 py-2 hover:text-[#d6a64c] ">
                         Login
                     </NavLink>
-                    <NavLink to="/register" className="block lg:inline-block px-3 py-2 hover:text-gray-300 ">
+                    <NavLink to="/register" className="block lg:inline-block px-3 py-2 hover:text-[#d6a64c] ">
                         Register
                     </NavLink>
                 </>

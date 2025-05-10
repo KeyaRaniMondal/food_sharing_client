@@ -24,9 +24,7 @@ const UpdateFood = () => {
       return;
     }
 
-    const updatedFood = {
-      notes, 
-    };
+    const updatedFood = { notes };
 
     fetch(`https://food-sharing-server-hazel.vercel.app/food_collection/${food._id}`, {
       method: "PUT",
@@ -52,86 +50,90 @@ const UpdateFood = () => {
   };
 
   return (
-    <div className="flex justify-center m-10 mt-28 ">
-      <div className="justify-center ml-20">
-        <h1 className="text-3xl pt-5 font-bold text-center">Update Food</h1>
+    <div className="flex justify-center px-4 sm:px-6 lg:px-8 mt-28">
+      <div className="w-full max-w-4xl bg-[#bddbbd] rounded-lg p-6 md:p-10">
+        <h1 className="text-2xl md:text-3xl font-bold text-center mb-10">Update Food</h1>
         <form onSubmit={handleSubmit}>
-          <div className="font-bold mb-2 ">
-            Food Image:
-            <input
-              type="text"
-              name="FoodImg"
-              placeholder="Enter image"
-              defaultValue={food.FoodImg}
-              className="input input-bordered input-warning w-full max-w-xs"
-              readOnly
-            />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div className="font-bold">
+              Food Image:
+              <input
+                type="text"
+                name="FoodImg"
+                placeholder="Enter image"
+                defaultValue={food.FoodImg}
+                className="input input-bordered input-warning w-full"
+                readOnly
+              />
+            </div>
+            <div className="font-bold">
+              Food Name:
+              <input
+                type="text"
+                name="food_name"
+                defaultValue={food.food_name}
+                placeholder="Enter Food Name"
+                className="input input-bordered input-warning w-full"
+                readOnly
+              />
+            </div>
+            <div className="font-bold">
+              Food Quantity:
+              <input
+                type="number"
+                name="quantity"
+                placeholder="Food Quantity"
+                defaultValue={food.quantity}
+                className="input input-bordered input-warning w-full"
+                readOnly
+              />
+            </div>
+            <div className="font-bold">
+              Pickup Location:
+              <input
+                type="text"
+                name="location"
+                placeholder="Enter Location"
+                defaultValue={food.location}
+                className="input input-bordered input-warning w-full"
+                readOnly
+              />
+            </div>
+            <div className="font-bold">
+              Expire Date/Time:
+              <input
+                type="datetime-local"
+                name="time"
+                placeholder="Type here"
+                defaultValue={new Date(food.time).toISOString().slice(0, 16)}
+                className="input input-bordered input-warning w-full"
+                readOnly
+              />
+            </div>
+            <div className="font-bold">
+              Food Status:
+              <input
+                type="text"
+                name="status"
+                placeholder="Type here"
+                defaultValue={food.status}
+                className="input input-bordered input-warning w-full"
+                readOnly
+              />
+            </div>
           </div>
-          <div className="font-bold mb-2">
-            Food Name:
-            <input
-              type="text"
-              name="food_name"
-              defaultValue={food.food_name}
-              placeholder="Enter Food Name"
-              className="input input-bordered input-warning w-full max-w-xs"
-              readOnly
-            />
-          </div>
-          <div className="font-bold mb-2">
-            Food Quantity:
-            <input
-              type="number"
-              name="quantity"
-              placeholder="Food Quantity"
-              defaultValue={food.quantity}
-              className="input input-bordered input-warning w-full max-w-xs"
-              readOnly
-            />
-          </div>
-          <div className="font-bold mb-2">
-            Pickup Location:
-            <input
-              type="text"
-              name="location"
-              placeholder="Enter Location"
-              defaultValue={food.location}
-              className="input input-bordered input-warning w-full max-w-xs"
-              readOnly
-            />
-          </div>
-          <div className="font-bold mb-2">
-            Expire Date/Time:
-            <input
-              type="datetime-local"
-              name="time"
-              placeholder="Type here"
-              defaultValue={new Date(food.time).toISOString().slice(0, 16)} 
-              className="input input-bordered input-warning w-full max-w-xs"
-              readOnly
-            />
-          </div>
-          <div className="font-bold">
-            Additional Notes:<br></br>
+
+          <div className="font-bold mb-6">
+            Additional Notes:
             <textarea
-              className="textarea textarea-warning w-80"
+              className="textarea textarea-warning w-full"
               placeholder="Ingredients"
               defaultValue={food.notes}
               name="notes"
             ></textarea>
           </div>
-          <div className="font-bold mb-2">
-            Food Status:
-            <input
-              type="text"
-              name="status"
-              placeholder="Type here"
-              defaultValue={food.status}
-              className="input input-bordered input-warning w-full max-w-xs"
-              readOnly
-            />
-          </div>
-          <button type="submit" className="btn btn1 my-5 text-white">
+
+          <button type="submit" className="btn btn1 mx-auto block">
             Update Food
           </button>
           <ToastContainer position="top-right" />

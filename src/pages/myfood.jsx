@@ -57,8 +57,8 @@ const MyFood = () => {
   };
 
   return (
-    <div className="my-food-container bg-[#e0dae0] p-10">
-      <h1 className="text-3xl font-bold text-center my-10">Manage My Foods</h1>
+    <div className="my-food-container  p-10">
+      <h1 className="text-3xl font-bold text-center my-10 mt-20">Manage My Foods</h1>
       {foods.length === 0 ? (
         <p className="text-center text-[#4b2727]">You have not added any foods yet.</p>
       ) : (
@@ -85,13 +85,13 @@ const MyFood = () => {
                 <td className="p-2">{food.status}</td>
                 <td className="p-2">
                   <button
-                    className="btn btn-primary btn-sm mr-2"
+                    className="btn btn-sm mr-2 bg-[#159915]"
                     onClick={() => handleUpdate(food._id)}
                   >
                     Update
                   </button>
                   <button
-                    className="btn btn-danger btn-sm"
+                    className="btn btn-danger btn-sm bg-red-500"
                     onClick={() => handleDelete(food._id)}
                   >
                     Delete
