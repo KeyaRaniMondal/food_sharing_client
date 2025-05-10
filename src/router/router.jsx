@@ -14,6 +14,7 @@ import UpdateFood from "../components/update";
 import Error from "../pages/error";
 import ReviewSection from "../components/rivew";
 import AllReviews from "../pages/allReviews";
+import Profile from "../pages/profile";
 
 const router = createBrowserRouter([
   {
@@ -71,6 +72,12 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login></Login>,
+      },
+      {
+        path:"/profile",
+        element:<PrivateRoute>
+          <Profile></Profile>
+        </PrivateRoute>
       },
       {
         path: "/review",

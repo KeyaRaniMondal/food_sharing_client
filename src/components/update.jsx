@@ -52,11 +52,11 @@ const UpdateFood = () => {
   };
 
   return (
-    <div className="flex justify-between m-10">
+    <div className="flex justify-center m-10 mt-28 ">
       <div className="justify-center ml-20">
         <h1 className="text-3xl pt-5 font-bold text-center">Update Food</h1>
         <form onSubmit={handleSubmit}>
-          <div className="font-bold mb-2">
+          <div className="font-bold mb-2 ">
             Food Image:
             <input
               type="text"
@@ -112,9 +112,9 @@ const UpdateFood = () => {
             />
           </div>
           <div className="font-bold">
-            Additional Notes:
+            Additional Notes:<br></br>
             <textarea
-              className="textarea textarea-warning"
+              className="textarea textarea-warning w-80"
               placeholder="Ingredients"
               defaultValue={food.notes}
               name="notes"

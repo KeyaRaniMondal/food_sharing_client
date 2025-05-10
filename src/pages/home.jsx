@@ -13,16 +13,12 @@ const Home = () => {
   return (
     <div>
 
-      <div className="h-80 w-full">
+       <div className="h-80 w-full">
         <Banner />
       </div>
       <Features foods={foods} />
-      <div className="text-center my-6">
-        <NavLink to="/availfood">
-          <button className="btn btn1 w-40">View All Foods</button>
-        </NavLink>
-      </div>
-      <div className="my-10">
+      
+      <div className="mt-[1500px] md:mt-[500px] lg:mt-0">
         <Recipe />
       </div>
       <ReviewSection></ReviewSection>

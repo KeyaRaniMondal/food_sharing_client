@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../providers/authProviders";
 import { FaCircleUser } from "react-icons/fa6";
 
@@ -90,10 +90,10 @@ const NavBar = () => {
                             className="menu menu-sm dropdown-content bg-white text-black rounded-box z-[1] mt-3 w-52 p-2 shadow"
                         >
                             <li>
-                                <a className="justify-between">
+                                <Link to={"/profile"} className="justify-between">
                                     {user.displayName || "Profile"}
                                     <span className="badge">New</span>
-                                </a>
+                                </Link>
                             </li>
                             <li onClick={logOut}>
                                 <a>Logout</a>

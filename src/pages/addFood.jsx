@@ -172,7 +172,7 @@ const AddFood = () => {
     </div>
 
     <div className="text-center mt-8">
-      <button type="submit" className="btn btn-wide btnu mb-8">
+      <button type="submit" className="btn btn-wide btn-outline text-green-900 mb-8">
         Add Food
       </button>
     </div>

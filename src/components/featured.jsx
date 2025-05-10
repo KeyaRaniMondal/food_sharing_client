@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { NavLink, useLoaderData } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 const Features = () => {
@@ -42,6 +42,11 @@ const Features = () => {
         <p className="text-center text-gray-500">No foods available.</p>
       )}
     </div>
+    <div className="text-center mt-10 ">
+        <NavLink to="/availfood">
+          <button className="btn btn1 w-40">View All Foods</button>
+        </NavLink>
+      </div>
   </div>
   
 
