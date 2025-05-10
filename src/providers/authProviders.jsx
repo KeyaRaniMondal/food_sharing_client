@@ -6,38 +6,35 @@ import axios from "axios";
 export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
+
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const createUser = async (email, password, name, photoURL) => {
+  const createUser = (email, password) => {
     setLoading(true);
-    const result = await createUserWithEmailAndPassword(auth, email, password);
-    await updateProfile(result.user, { displayName: name, photoURL });
-    setUser(result.user);
-    setLoading(false);
-    return result;
-  };
+    return createUserWithEmailAndPassword(auth, email, password)
+  }
 
-
-  const loginUser = async (email, password) => {
+  const signIn = (email, password) => {
     setLoading(true);
-    const result = await signInWithEmailAndPassword(auth, email, password);
-    setUser(result.user);
-    setLoading(false);
-    return result;
-  };
+    return signInWithEmailAndPassword(auth, email, password);
+  }
 
-  const logOut = async () => {
+  const logOut = () => {
     setLoading(true);
-    await signOut(auth);
-    setUser(null);
-    setLoading(false);
-  };
+    return signOut(auth);
+  }
 
+  const updateUserProfile = (name, photo) => {
+    return updateProfile(auth.currentUser, {
+      displayName: name, photoURL: photo
+    });
+  }
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+    const unsubscribe = onAuthStateChanged(auth, currentUser => {
       setUser(currentUser);
+      console.log('current user', currentUser);
       console.log('state captured', currentUser?.email)
       if (currentUser?.email) {
         const user = { email: currentUser.email }
@@ -52,16 +49,19 @@ const AuthProvider = ({ children }) => {
       }
       setLoading(false);
     });
-    return () => unsubscribe();
-  }, []);
+    return () => {
+      return unsubscribe();
+    }
+  }, [])
+
 
   const userInfo = {
     user,
     loading,
     createUser,
-    loginUser,
+    signIn,
     logOut,
-    updateProfile,
+    updateUserProfile,
     setUser
   };
 
