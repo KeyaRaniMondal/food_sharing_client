@@ -1,4 +1,4 @@
-![Food sharing website Screenshot](https://i.ibb.co/S4V6sHJR/Screenshot-262.png)
+![Food sharing website Screenshot](Screenshot (262).png)
 
 
 # 🥗 SAVOURY
