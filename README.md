@@ -1,4 +1,4 @@
-![Food sharing website Screenshot](Screenshot (262).png)
+![Food sharing website Screenshot]([Screenshot (262).png](https://github.com/KeyaRaniMondal/food_sharing_client/blob/eb416b98fb605f33a688da617a558c371c244e03/Screenshot%20(262).png))
 
 
 # 🥗 SAVOURY
