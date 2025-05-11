@@ -1,5 +1,6 @@
 
-<img class="screenshot" src="https://i.ibb.co.com/S4V6sHJR/Screenshot-262.png" alt="Food sharing website Screenshot">
+<img class="screenshot" src="https://i.ibb.co/S4V6sHJR/Screenshot-262.png" alt="Food sharing website Screenshot">
+
 ![Food Sharing Website Screenshot](./assets/screenshot-262.png)
 
 
