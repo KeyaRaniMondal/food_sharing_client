@@ -1,5 +1,6 @@
 
 <img class="screenshot" src="https://github.com/user-attachments/assets/src/assets/Screenshot (262).png" alt="Food sharing website Screenshot">
+![Food Sharing Website Screenshot](./assets/screenshot-262.png)
 
 
 # 🥗 SAVOURY
