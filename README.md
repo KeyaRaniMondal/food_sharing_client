@@ -1,7 +1,4 @@
-
-<img class="screenshot" src="https://i.ibb.co/S4V6sHJR/Screenshot-262.png" alt="Food sharing website Screenshot">
-
-![Food Sharing Website Screenshot](./assets/screenshot-262.png)
+![Food sharing website Screenshot](https://i.ibb.co/S4V6sHJR/Screenshot-262.png)
 
 
 # 🥗 SAVOURY
@@ -36,58 +33,58 @@
 - 🔍 **View Food Details** – See in-depth information on available food.  
 
 📦 Dependencies
-Main Dependencies
-axios
+- **Main Dependencies**
+- axios
 
-firebase
+- firebase
 
-localforage
+- localforage
 
-lucide-react
+- lucide-react
 
-match-sorter
+- match-sorter
 
-react
+- react
 
-react-dom
+- react-dom
 
-react-icons
+- react-icons
 
-react-router-dom
+- react-router-dom
 
-react-toastify
+- react-toastify
 
-sort-by
+- sort-by
 
-sweetalert2
+- sweetalert2
 
-Dev Dependencies
-@vitejs/plugin-react
+- **Dev Dependencies**
+- @vitejs/plugin-react
 
-eslint, @eslint/js, and plugins
+- eslint, @eslint/js, and plugins
 
-tailwindcss, postcss, autoprefixer, daisyui
+- tailwindcss, postcss, autoprefixer, daisyui
 
-vite
+- vite
   
 # A step-by-step guide on how to run the project locally:
 ## 📥 Installation
 
 1. Clone the repository:
 
-   git clone [https://github.com/KeyaRaniMondal/food_sharing_client.git]
+  - git clone [https://github.com/KeyaRaniMondal/food_sharing_client.git]
   - cd food_sharing_client
    
 2. Install dependencies:
     - npm install
 
-Create environment variables:
+- Create environment variables:
 
-Create a .env file in the root with the following (example):
+- Create a .env file in the root with the following (example):
 
-VITE_API_URL=https://your-api-url.com
-VITE_FIREBASE_API_KEY=your_firebase_api_key
-VITE_AUTH_DOMAIN=your_auth_domain
+- VITE_API_URL=https://your-api-url.com
+- VITE_FIREBASE_API_KEY=your_firebase_api_key
+- VITE_AUTH_DOMAIN=your_auth_domain
 # Add other Firebase configs
 
 3. Start the development server:
@@ -95,5 +92,5 @@ VITE_AUTH_DOMAIN=your_auth_domain
 
 ## 🌐 Live Demo
 🔗 [SAVOURY]( https://food-sharing-1d765.web.app/)
-or
--🔗 server: (https://food-sharing-server-hazel.vercel.app/)
+- or
+- 🔗 server: (https://food-sharing-server-hazel.vercel.app/)
