@@ -1,46 +1,72 @@
 
-<img class="screenshot" src="https://github.com/user-attachments/assets/2888f1cb-e457-4805-a0a3-8723e21ad8e9" alt="Chatchrip Forum Screenshot">
+<img class="screenshot" src="https://github.com/user-attachments/assets/src/assets/Screenshot (262).png" alt="Food sharing website Screenshot">
 
 
 # 🥗 SAVOURY
 
  SAVOURY is a web-based solution aimed at reducing food waste while fostering a more sustainable and equitable food system. Users can donate surplus food, request food items, and manage their listings effortlessly.
 
-## 🛠 Built With  
+## 🚀 Project Overview
 
-This project leverages modern web technologies for an optimal user experience:  
+ **SAVOURY** is a complete application designed to facilitate food sharing between individuals. Users can donate excess food, request available items, and manage their profiles securely. The app prioritizes simplicity, speed, and security, built using modern web technologies like React, Vite, Tailwind CSS , mongodb , firebase , express js and node js.
 
-- ⚛️ **React** – Frontend framework for building dynamic user interfaces.  
-- 🌍 **Axios** – Handles API requests efficiently.  
-- 🔄 **React Loader** – Displays loading animations for better UX.  
-- 🔑 **JWT (JSON Web Token)** – Secure user authentication and verification.  
+## 🛠️ Tech Stack
 
-  ## 🚀 Features  
+- **React** 18.3.1
+- **Vite** 6.0.5
+- **Tailwind CSS** 3.4.17 with DaisyUI
+- **React Router DOM** 7.1.5
+- **Firebase** 11.1.0 (for authentication and/or storage)
+- **Axios** (for HTTP requests)
+- **JWT** (authentication strategy)
+- **React Icons**, **Lucide React**, **SweetAlert2**, **React Toastify** (for UI enhancements)
 
-- 🎨 **Eye-Catching UI** – Engaging and user-friendly design.  
-- 🍽️ **Add Food** – Users can donate surplus food items.  
-- ✏️ **Update & Delete Food** – Modify or remove existing food listings.  
-- ✅ **User Verification with JWT** – Ensures secure and authenticated access.  
-- 📌 **Add Food to My Requests After Deletion** – Keeps track of requested food.  
+
+  ## ✨ Features
+
+- 🌟 **Eye-Catching UI** – Engaging and user-friendly design.
+- 🍽️ **Add Food** – Users can donate surplus food items.
+- ✏️ **Update & Delete Food** – Modify or remove existing food listings.
+- ✅ **User Verification with JWT** – Ensures secure and authenticated access.
+- 📌 **Add Food to "My Requests" After Deletion** – Maintains a record of requested food.
+- 🔍 **View Food Details** – See in-depth information on available food.
+- 👤 **User Profile** – Logged-in users can manage their profile information.  
 - 🔍 **View Food Details** – See in-depth information on available food.  
 
-## 📦 Dependencies Used  
+📦 Dependencies
+Main Dependencies
+axios
 
-The following **npm packages** are used in this project:  
+firebase
 
- "dependencies": {
-   - "axios": "^1.7.9",
-   - "firebase": "^11.1.0",
-   - "localforage": "^1.10.0",
-   - "match-sorter": "^8.0.0",
-  -  "react": "^18.3.1",
-   - "react-dom": "^18.3.1",
-  -  "react-icons": "^5.4.0",
-  -  "react-router-dom": "^7.1.1",
-   - "react-toastify": "^11.0.2",
-   - "sort-by": "^1.2.0",
-  -  "sweetalert2": "^11.15.3"
--  }
+localforage
+
+lucide-react
+
+match-sorter
+
+react
+
+react-dom
+
+react-icons
+
+react-router-dom
+
+react-toastify
+
+sort-by
+
+sweetalert2
+
+Dev Dependencies
+@vitejs/plugin-react
+
+eslint, @eslint/js, and plugins
+
+tailwindcss, postcss, autoprefixer, daisyui
+
+vite
   
 # A step-by-step guide on how to run the project locally:
 ## 📥 Installation
@@ -52,7 +78,16 @@ The following **npm packages** are used in this project:
    
 2. Install dependencies:
     - npm install
-      
+
+Create environment variables:
+
+Create a .env file in the root with the following (example):
+
+VITE_API_URL=https://your-api-url.com
+VITE_FIREBASE_API_KEY=your_firebase_api_key
+VITE_AUTH_DOMAIN=your_auth_domain
+# Add other Firebase configs
+
 3. Start the development server:
    - npm run dev
 
