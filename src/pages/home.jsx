@@ -12,19 +12,19 @@ const Home = () => {
 
   return (
     <div>
-
-       <div className="h-80 w-full">
-        <Banner />
+      <Banner />
+      <div className="mt-12">
+        <Features foods={foods} />
       </div>
-      <Features foods={foods} />
-      
-      <div className="mt-[1500px] md:mt-[500px] lg:mt-0">
+      <div className="mt-16 md:mt-20 lg:mt-24">
         <Recipe />
       </div>
-      <ReviewSection></ReviewSection>
+
+      <div className="mt-16">
+        <ReviewSection />
+      </div>
     </div>
   );
 };
 
 export default Home;
-

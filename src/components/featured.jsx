@@ -8,48 +8,53 @@ const Features = () => {
     .slice(0, 6);
 
   return (
-    <div className=" h-screen mt-72 mx-20">
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mx-5">
-      {sortedFoods.length > 0 ? (
-        sortedFoods.map((food) => (
-          <div
-            key={food.id}
-            className="h-80 flex flex-col justify-between p-4 transform transition-transform duration-500 hover:scale-105 hover:shadow-2xl rounded-lg overflow-hidden"
-            style={{
-              backgroundImage: `url(${food.FoodImg})`,
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-          >
-            <h1 className="text-xl font-bold bg-[#f8f5f5] bg-opacity-10 p-x-10">{food.food_name}</h1>
-            <div className="bg-black bg-opacity-50 p-2 rounded-md text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-              {/* <h1 className="text-xl font-bold">{food.food_name}</h1> */}
-              {/* <p className="text-sm">{food.quantity}</p> */}
+    <div className="mt-24 px-4 sm:px-6 lg:px-20 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {sortedFoods.length > 0 ? (
+          sortedFoods.map((food) => (
+            <div
+              key={food.id}
+              className="relative h-80 rounded-xl overflow-hidden shadow-md transform transition-transform duration-300 hover:scale-105 group"
+            >
+              <img
+                src={food.FoodImg}
+                alt={food.food_name}
+                className="object-cover w-full h-full group-hover:brightness-90 transition duration-300"
+              />
+
+              {/* Bottom overlay */}
+              <div className="absolute bottom-0 left-0 right-0 bg-white/80 backdrop-blur-sm text-gray-800 px-4 py-3">
+                <h2 className="text-lg font-semibold truncate">{food.food_name}</h2>
+                <p className="text-sm text-gray-600">{food.source || "PINCH OF YUM"}</p>
+
+                <div className="flex justify-between items-center mt-2">
+                  <div className="flex text-yellow-700 text-lg">
+                    <span>★ ★ ★ ★ ☆</span>
+                  </div>
+                  <div>
+                    <Link to={`/food/${food._id}`} className="mt-auto">
+                      <button className="btn btn-outline mt-4 font-semibold px-4 py-2 rounded shadow-md">
+                        See Details
+                      </button>
+                    </Link>
+                  </div>
+
+                </div>
+              </div>
             </div>
-  
-            {/* <div className="text-white mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-              <p className="text-sm">{food.notes}</p>
-            </div> */}
-            <Link to={`/food/${food._id}`}>
-              <button className="btn btn1 mt-4 bg-green-600 hover:bg-green-700 transition-colors duration-300 text-black">
-                See Details
-              </button>
-            </Link>
-          </div>
-        ))
-      ) : (
-        <p className="text-center text-gray-500">No foods available.</p>
-      )}
-    </div>
-    <div className="text-center mt-10 ">
+
+          ))
+        ) : (
+          <p className="text-center text-gray-500 col-span-full">No foods available.</p>
+        )}
+      </div>
+
+      <div className="text-center mt-10">
         <NavLink to="/availfood">
-          <button className="btn btn1 w-40">View All Foods</button>
+          <button className="btn btn-outline w-40 font-semibold rounded-lg px-4 py-2 shadow-md">View All Foods</button>
         </NavLink>
       </div>
-  </div>
-  
-
+    </div>
   );
 };
 
