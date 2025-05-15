@@ -31,7 +31,7 @@ const newsData = [
 
 const NewsAndUpdates = () => {
   return (
-    <section className="bg-blue-50 py-12">
+    <section className="bg-gradient-to-br from-yellow-50 to-green-50 py-12 mt-10">
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-10">📰 News & Updates</h2>
         <div className="grid gap-6 md:grid-cols-3">

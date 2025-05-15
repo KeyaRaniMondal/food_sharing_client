@@ -15,6 +15,7 @@ import Error from "../pages/error";
 import ReviewSection from "../components/rivew";
 import AllReviews from "../pages/allReviews";
 import Profile from "../pages/profile";
+import Contact from "../pages/Contact";
 
 const router = createBrowserRouter([
   {
@@ -72,6 +73,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login></Login>,
+      },
+      {
+        path: "/contact",
+        element: <Contact></Contact>
       },
       {
         path:"/profile",

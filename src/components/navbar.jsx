@@ -14,6 +14,7 @@ const NavBar = () => {
             <NavLink to="/availfood" className="block lg:inline-block px-3 py-2 hover:text-[#d6a64c]">
                 Available Foods
             </NavLink>
+
             {user ? (
                 <>
                     <NavLink to="/addFood" className="block lg:inline-block px-3 py-2 hover:text-[#d6a64c] ">
@@ -28,9 +29,6 @@ const NavBar = () => {
                 </>
             ) : (
                 <>
-                    <NavLink to="/review" className="block lg:inline-block px-3 py-2 hover:text-[#d6a64c] ">
-                        Reviews
-                    </NavLink>
                     <NavLink to="/login" className="block lg:inline-block px-3 py-2 hover:text-[#d6a64c] ">
                         Login
                     </NavLink>
@@ -39,6 +37,9 @@ const NavBar = () => {
                     </NavLink>
                 </>
             )}
+            <NavLink to="/contact" className="block lg:inline-block px-3 py-2 hover:text-[#d6a64c] ">
+                Contact
+            </NavLink>
         </>
     );
 
@@ -52,7 +53,7 @@ const NavBar = () => {
                 <div className="space-x-5 text-white font-bold">{links}</div>
 
                 {/* for light or dark theme */}
-                <label className="swap swap-rotate ml-10 -mr-24">
+                <label className="swap swap-rotate ml-10 -mr-14">
                     <input type="checkbox" className="theme-controller" value="dark" />
                     <svg
                         className="swap-off h-10 w-10 fill-current"
