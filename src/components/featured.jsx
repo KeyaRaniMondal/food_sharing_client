@@ -49,11 +49,6 @@ const Features = () => {
         )}
       </div>
 
-      <div className="text-center mt-10">
-        <NavLink to="/availfood">
-          <button className="btn btn-outline w-40 font-semibold rounded-lg px-4 py-2 shadow-md">View All Foods</button>
-        </NavLink>
-      </div>
     </div>
   );
 };

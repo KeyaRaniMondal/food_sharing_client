@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import banner from "../assets/banner.jpg";
 
 const Banner = () => {
@@ -20,6 +21,12 @@ const Banner = () => {
         <p className="text-sm md:text-lg max-w-2xl mx-auto">
           Find recipes for whatever you're craving, plus tips on how to make each dish stand out.
         </p>
+        
+      <div className="text-center mt-10">
+        <NavLink to="/availfood">
+          <button className="btn bg-black text-white w-40 font-semibold rounded-lg px-4 py-2 shadow-md">View All Foods</button>
+        </NavLink>
+      </div>
       </div>
     </div>
   );

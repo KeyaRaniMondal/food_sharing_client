@@ -6,6 +6,8 @@ import ReviewSection from "../components/rivew";
 
 import '../App.css'
 import '../index.css'
+import SharedByFoodies from "../components/newsAndUpdates";
+import CookedMoments from "../components/newsAndUpdates";
 
 const Home = () => {
   const foods = useLoaderData();
@@ -16,6 +18,7 @@ const Home = () => {
       <div className="mt-12">
         <Features foods={foods} />
       </div>
+      <CookedMoments></CookedMoments>
       <div className="mt-16 md:mt-20 lg:mt-24">
         <Recipe />
       </div>

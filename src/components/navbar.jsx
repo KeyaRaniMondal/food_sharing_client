@@ -52,7 +52,7 @@ const NavBar = () => {
                 <div className="space-x-5 text-white font-bold">{links}</div>
 
                 {/* for light or dark theme */}
-                <label className="swap swap-rotate ml-10">
+                <label className="swap swap-rotate ml-10 -mr-24">
                     <input type="checkbox" className="theme-controller" value="dark" />
                     <svg
                         className="swap-off h-10 w-10 fill-current"
