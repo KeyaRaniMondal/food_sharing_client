@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/authProviders";
 import Swal from "sweetalert2";
+import ReviewSection from "./rivew";
 
 const FoodDetails = () => {
   const { user } = useContext(AuthContext);
@@ -53,9 +54,9 @@ const FoodDetails = () => {
         // Delete from available foods
         fetch(`https://food-sharing-server-hazel.vercel.app/food_collection/${_id}`, {
           method: "DELETE",
-          credentials: "include", 
+          credentials: "include",
         })
-        
+
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
@@ -75,7 +76,7 @@ const FoodDetails = () => {
                   time,
                   notes,
                   status,
-                  email: user?.email, 
+                  email: user?.email,
                   name: user?.displayName || "Anonymous",
 
 
@@ -126,7 +127,7 @@ const FoodDetails = () => {
       }
     });
   };
-  
+
 
   return (
     <div className="food-details w-4/5 mx-auto my-10 mt-28">
@@ -139,15 +140,20 @@ const FoodDetails = () => {
           alt={food_name}
           className="w-1/3 h-auto rounded-lg shadow-lg"
         />
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col ">
           <p className="text-md text-black">
             Notes: <br /> {notes}
           </p>
-          <div className="flex gap-4">
+
+          <div className="flex justify-around  w-[50%]">
+            <label htmlFor="my_modal_7" className="btn bg-black text-white mt-10 ">Request Details</label>
+            <ReviewSection />
           </div>
+
         </div>
       </div>
-      <label htmlFor="my_modal_7" className="btn bg-[#d7da45] mt-5">Request Details</label>
+
+
       <input type="checkbox" id="my_modal_7" className="modal-toggle" />
       <div className="modal" role="dialog">
         <div className="modal-box">
@@ -173,7 +179,7 @@ const FoodDetails = () => {
 
           <div className="modal-action">
             <button
-              className="btn btn-secondary"
+              className="btn btn-outline"
               onClick={handleDelete}
             >
               Request

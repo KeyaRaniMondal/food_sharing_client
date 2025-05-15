@@ -11,12 +11,11 @@ const MyFood = () => {
 
   useEffect(() => {
     if (user && user.email) {
-      // fetch(`https://food-sharing-server-hazel.vercel.app/food_collection?email=${user.email}`)
-      //   .then((res) => res.json())
-      //   .then((data) => setFoods(data))
-      //   .catch((error) => console.error("Error fetching foods:", error));
-      axios.get(`https://food-sharing-server-hazel.vercel.app/food_collection?email=${user.email}`,{withCredentials:true})
-      .then(res=>setFoods(res.data))
+      axios
+        .get(`https://food-sharing-server-hazel.vercel.app/food_collection?email=${user.email}`, {
+          withCredentials: true,
+        })
+        .then((res) => setFoods(res.data));
     }
   }, [user]);
 
@@ -33,7 +32,7 @@ const MyFood = () => {
       if (result.isConfirmed) {
         fetch(`https://food-sharing-server-hazel.vercel.app/food_collection/${id}`, {
           method: "DELETE",
-          credentials: "include", 
+          credentials: "include",
         })
           .then((res) => res.json())
           .then((data) => {
@@ -53,54 +52,63 @@ const MyFood = () => {
   };
 
   const handleUpdate = (id) => {
-    navigate(`/food/update/${id}`);  
+    navigate(`/food/update/${id}`);
   };
 
   return (
-    <div className="my-food-container  p-10">
-      <h1 className="text-3xl font-bold text-center my-10 mt-20">Manage My Foods</h1>
+    <div className="my-food-container p-4 sm:p-6 md:p-10 mt-20">
+      <h1 className="text-3xl font-bold text-center mb-10">Manage My Foods</h1>
+
       {foods.length === 0 ? (
-        <p className="text-center text-[#4b2727]">You have not added any foods yet.</p>
+        <p className="text-center text-[#4b2727]">
+          You have not added any foods yet.
+        </p>
       ) : (
-        <table className="table-auto w-full bg-white shadow-lg rounded">
-          <thead>
-            <tr className="bg-gray-200 text-left">
-              <th className="p-2">Image</th>
-              <th className="p-2">Food Name</th>
-              <th className="p-2">Quantity</th>
-              <th className="p-2">Location</th>
-              <th className="p-2">Status</th>
-              <th className="p-2">Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {foods.map((food) => (
-              <tr key={food._id} className="border-t">
-                <td className="p-2">
-                  <img src={food.FoodImg} alt={food.food_name} className="w-16 h-16 object-cover rounded" />
-                </td>
-                <td className="p-2">{food.food_name}</td>
-                <td className="p-2">{food.quantity}</td>
-                <td className="p-2">{food.location}</td>
-                <td className="p-2">{food.status}</td>
-                <td className="p-2">
-                  <button
-                    className="btn btn-sm mr-2 bg-[#159915]"
-                    onClick={() => handleUpdate(food._id)}
-                  >
-                    Update
-                  </button>
-                  <button
-                    className="btn btn-danger btn-sm bg-red-500"
-                    onClick={() => handleDelete(food._id)}
-                  >
-                    Delete
-                  </button>
-                </td>
+        <div className="overflow-x-auto">
+          <table className="min-w-full bg-white shadow-lg rounded">
+            <thead>
+              <tr className="bg-gray-200 text-left">
+                <th className="p-3 text-sm sm:text-base">Image</th>
+                <th className="p-3 text-sm sm:text-base">Food Name</th>
+                <th className="p-3 text-sm sm:text-base">Quantity</th>
+                <th className="p-3 text-sm sm:text-base">Location</th>
+                <th className="p-3 text-sm sm:text-base">Status</th>
+                <th className="p-3 text-sm sm:text-base">Actions</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {foods.map((food) => (
+                <tr key={food._id} className="border-t">
+                  <td className="p-3">
+                    <img
+                      src={food.FoodImg}
+                      alt={food.food_name}
+                      className="w-16 h-16 object-cover rounded"
+                    />
+                  </td>
+                  <td className="p-3 text-sm">{food.food_name}</td>
+                  <td className="p-3 text-sm">{food.quantity}</td>
+                  <td className="p-3 text-sm">{food.location}</td>
+                  <td className="p-3 text-sm">{food.status}</td>
+                  <td className="p-3">
+                    <button
+                      className="btn btn-sm mr-2 bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700"
+                      onClick={() => handleUpdate(food._id)}
+                    >
+                      Update
+                    </button>
+                    <button
+                      className="btn btn-sm bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
+                      onClick={() => handleDelete(food._id)}
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       )}
     </div>
   );

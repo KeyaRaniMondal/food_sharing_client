@@ -53,25 +53,25 @@ const ReviewSection = () => {
         navigate('/review')
     }
     return (
-        <div className="max-w-2xl mx-auto p-5 bg-white shadow-lg rounded-lg">
-            <h2 className="text-2xl font-bold text-center mb-4">Reviews</h2>
-            <p>Here You can give your opinion as review and we would try our best to improve it.</p>
+        <div className="max-w-2xl mx-auto p-5">
+            {/* <h2 className="text-2xl font-bold text-center mb-4">Reviews</h2>
+            <p>Here You can give your opinion as review and we would try our best to improve it.</p> */}
             <div className="flex justify-around mt-5">
             {!showForm && (
                 <button
                     onClick={() => setShowForm(true)}
-                    className="btn1 text-black px-4 py-2 rounded mb-4 "
+                    className="btn btn-outline px-4 py-2 rounded mb-4 "
                 >
                     Leave a Review
                 </button>
             )}
-
+{/* 
             <button
                     onClick={handleNavigate}
                     className="btn2 text-white px-4 py-2 rounded mb-4 ml-10 "
                 >
                     Show Reviews
-                </button>
+                </button> */}
             </div>
             
             {showForm && (
